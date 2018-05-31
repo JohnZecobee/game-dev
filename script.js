@@ -1,3 +1,6 @@
 var init = function () {
-    console.log("My first console log");
+
+    var header = document.getElementById("header")
+    header.textContent = "Hello Javascript!"
+
 };
