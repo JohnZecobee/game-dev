@@ -1,8 +1,8 @@
 # Tic Tac Toe game
 
-Plan: (bold items are complete)
+Plan: (italic items are complete)
 1. *Make html page*
-2. Make javascript page and have it run on load
+2. *Make javascript page and have it run on load*
 3. Use javascript to add hello world to the html
 4. Make a canvas
 5. Draw hello world on the canvas
