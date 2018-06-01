@@ -5,18 +5,25 @@ var init = function () {
 
     var canvas = document.getElementById("myCanvas");
     var context = canvas.getContext("2d")
-    context.font = "20px Arial";
-    context.textAlign = "center"
-    context.fillText("Hello Canvas!", 150, 50);
 
-    canvas.addEventListener('click', click_handler);
+    canvas.addEventListener('click', clickHandler);
+
+    draw(context);
 };
 
-var click_handler = function (event) {
+var clickHandler = function (event) {
     position = getRelativeCoords(event);
     console.log(position.x, position.y)
-}
+};
 
 var getRelativeCoords = function (event) {
     return { x: event.offsetX, y: event.offsetY };
-}
+};
+
+var draw = function (context) {
+
+    context.fillRect(99, 0, 2, 300);
+    context.fillRect(199, 0, 2, 300);
+    context.fillRect(0, 99, 300, 2);
+    context.fillRect(0, 199, 300, 2);
+};
