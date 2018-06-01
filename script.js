@@ -25,6 +25,16 @@ var clickHandler = function (event) {
     var row = Math.floor(position.y / 100);
     console.log("cell:", col, row);
 
+    if (row < 0 || row > 2 || col < 0 || col > 2) {
+        console.log("Cell off board");
+        return;
+    }
+
+    if (board[row][col]) {
+        console.log("Cell already taken");
+        return;
+    }
+
     board[row][col] = player;
     console.log("board:", board);
 
