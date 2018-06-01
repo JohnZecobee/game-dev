@@ -1,7 +1,10 @@
-var init = function () {
+board = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""]
+];
 
-    var header = document.getElementById("header")
-    header.textContent = "Hello Javascript!"
+var init = function () {
 
     var canvas = document.getElementById("myCanvas");
     var context = canvas.getContext("2d")
@@ -17,8 +20,10 @@ var clickHandler = function (event) {
 
     col = Math.floor(position.x / 100);
     row = Math.floor(position.y / 100);
-
     console.log("cell:", col, row);
+
+    board[row][col] = "X";
+    console.log("board:", board);
 };
 
 var getRelativeCoords = function (event) {

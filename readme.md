@@ -8,10 +8,11 @@ Plan: (italic items are complete)
 5. *Handle clicks and log position*
 6. *Draw a grid on the canvas*
 7. *Print to the console which cell is clicked*
-8. Make it change the state of the cell
-9. Check for win
-10. Toggle between player 1 and 2
-11. Check for tie
-12. Stop cells from being clicked if already clicked
-13. Stop cells from being clicked if tied or won
-14. Offer reset
+8. *Internally track which cells have been clicked*
+9. Draw the state of each cell to the canvas
+10. Check for win
+11. Toggle between player 1 and 2
+12. Check for tie
+13. Stop cells from being clicked if already clicked
+14. Stop cells from being clicked if tied or won
+15. Offer reset
