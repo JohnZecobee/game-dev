@@ -82,5 +82,22 @@ var checkForWin = function () {
             context.font = "48px Arial";
             context.textAlign = "center";
             context.fillText("Player " + player + " won!", 150, 370);
+
+        } else {
+            var tie = true;
+            board.forEach(function (row) {
+                row.forEach(function (cell) {
+                    if (cell == "") {
+                        tie = false;
+                    }
+                });
+            });
+            if (tie) {
+                console.log("Board filled");
+
+                context.font = "48px Arial";
+                context.textAlign = "center";
+                context.fillText("It was a tie!", 150, 370);
+            }
         }
 };
