@@ -5,7 +5,7 @@ Plan: (italic items are complete)
 2. *Make javascript page and have it run on load*
 3. *Use javascript to add something to the html*
 4. *Make a canvas and draw to it with javascript*
-5. Handle clicks
+5. *Handle clicks and log position*
 6. Draw a grid on the canvas
 7. Print to the console which cell is clicked
 8. Make it change the state of the cell
