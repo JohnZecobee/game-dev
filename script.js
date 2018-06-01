@@ -6,6 +6,8 @@ var board = [
 
 var context;
 
+var player = "X";
+
 var init = function () {
 
     var canvas = document.getElementById("myCanvas");
@@ -23,12 +25,18 @@ var clickHandler = function (event) {
     var row = Math.floor(position.y / 100);
     console.log("cell:", col, row);
 
-    board[row][col] = "X";
+    board[row][col] = player;
     console.log("board:", board);
 
     draw();
 
-    checkForWin()
+    checkForWin();
+
+    if (player == "X") {
+        player = "O";
+    } else {
+        player = "X"
+    }
 };
 
 var getRelativeCoords = function (event) {
@@ -47,10 +55,10 @@ var draw = function () {
 
     board.forEach(function (row, row_index) {
         row.forEach(function (cell, col_index) {
-            if (cell == "X") {
+            if (cell) {
                 x_position = col_index * 100 + 50;
                 y_position = row_index * 100 + 70;
-                context.fillText("X", x_position, y_position);
+                context.fillText(cell, x_position, y_position);
             }
         });
     });
@@ -58,21 +66,21 @@ var draw = function () {
 
 var checkForWin = function () {
 
-    if ((board[0][0] && board[0][1] && board[0][2]) ||
-        (board[1][0] && board[1][1] && board[1][2]) ||
-        (board[2][0] && board[2][1] && board[2][2]) ||
+    if ((board[0][0] == player && board[0][1] == player && board[0][2] == player ) ||
+        (board[1][0] == player && board[1][1] == player && board[1][2] == player ) ||
+        (board[2][0] == player && board[2][1] == player && board[2][2] == player ) ||
 
-        (board[0][0] && board[1][0] && board[2][0]) ||
-        (board[0][1] && board[1][1] && board[2][1]) ||
-        (board[0][2] && board[1][2] && board[2][2]) ||
+        (board[0][0] == player && board[1][0] == player && board[2][0] == player ) ||
+        (board[0][1] == player && board[1][1] == player && board[2][1] == player ) ||
+        (board[0][2] == player && board[1][2] == player && board[2][2] == player ) ||
 
-        (board[0][0] && board[1][1] && board[2][2]) ||
-        (board[2][0] && board[1][1] && board[0][2])) {
-        
-            console.log("Player won!")
+        (board[0][0] == player && board[1][1] == player && board[2][2] == player ) ||
+        (board[2][0] == player && board[1][1] == player && board[0][2] == player )) {
 
-            context.font = "50px Arial";
+            console.log("Player " + player + " won!");
+
+            context.font = "48px Arial";
             context.textAlign = "center";
-            context.fillText("Player won!", 150, 370);
+            context.fillText("Player " + player + " won!", 150, 370);
         }
 };

@@ -11,7 +11,7 @@ Plan: (italic items are complete)
 8. *Internally track which cells have been clicked*
 9. *Draw the state of each cell to the canvas*
 10. *Check for win*
-11. Toggle between player 1 and 2
+11. *Toggle between player 1 and 2*
 12. Check for tie
 13. Stop cells from being clicked if already clicked
 14. Stop cells from being clicked if tied or won
