@@ -27,6 +27,8 @@ var clickHandler = function (event) {
     console.log("board:", board);
 
     draw();
+
+    checkForWin()
 };
 
 var getRelativeCoords = function (event) {
@@ -52,4 +54,25 @@ var draw = function () {
             }
         });
     });
+};
+
+var checkForWin = function () {
+
+    if ((board[0][0] && board[0][1] && board[0][2]) ||
+        (board[1][0] && board[1][1] && board[1][2]) ||
+        (board[2][0] && board[2][1] && board[2][2]) ||
+
+        (board[0][0] && board[1][0] && board[2][0]) ||
+        (board[0][1] && board[1][1] && board[2][1]) ||
+        (board[0][2] && board[1][2] && board[2][2]) ||
+
+        (board[0][0] && board[1][1] && board[2][2]) ||
+        (board[2][0] && board[1][1] && board[0][2])) {
+        
+            console.log("Player won!")
+
+            context.font = "50px Arial";
+            context.textAlign = "center";
+            context.fillText("Player won!", 150, 370);
+        }
 };
