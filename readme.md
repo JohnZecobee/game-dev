@@ -9,7 +9,7 @@ Plan: (italic items are complete)
 6. *Draw a grid on the canvas*
 7. *Print to the console which cell is clicked*
 8. *Internally track which cells have been clicked*
-9. Draw the state of each cell to the canvas
+9. *Draw the state of each cell to the canvas*
 10. Check for win
 11. Toggle between player 1 and 2
 12. Check for tie
