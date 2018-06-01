@@ -13,7 +13,12 @@ var init = function () {
 
 var clickHandler = function (event) {
     position = getRelativeCoords(event);
-    console.log(position.x, position.y)
+    console.log("position:", position.x, position.y)
+
+    col = Math.floor(position.x / 100);
+    row = Math.floor(position.y / 100);
+
+    console.log("cell:", col, row);
 };
 
 var getRelativeCoords = function (event) {

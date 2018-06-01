@@ -7,7 +7,7 @@ Plan: (italic items are complete)
 4. *Make a canvas and draw to it with javascript*
 5. *Handle clicks and log position*
 6. *Draw a grid on the canvas*
-7. Print to the console which cell is clicked
+7. *Print to the console which cell is clicked*
 8. Make it change the state of the cell
 9. Check for win
 10. Toggle between player 1 and 2
