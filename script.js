@@ -1,21 +1,31 @@
-var board = [
-    ["", "", ""],
-    ["", "", ""],
-    ["", "", ""]
-];
-
+var canvas;
 var context;
-
-var player = "X";
-
-var state = "playing"
+var board;
+var player;
+var state;
 
 var init = function () {
 
-    var canvas = document.getElementById("myCanvas");
+    canvas = document.getElementById("myCanvas");
+    canvas.addEventListener('click', clickHandler);
+
     context = canvas.getContext("2d")
 
-    canvas.addEventListener('click', clickHandler);
+    context.font = "48px Arial";
+    context.textAlign = "center";
+
+    start();
+};
+
+var start = function () {
+
+    board = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+    ];
+    player = "X";
+    state = "playing";
 
     draw();
 };
@@ -28,7 +38,6 @@ var clickHandler = function (event) {
 
         var col = Math.floor(position.x / 100);
         var row = Math.floor(position.y / 100);
-        console.log("cell:", col, row);
 
         if (row < 0 || row > 2 || col < 0 || col > 2) {
             console.log("Cell off board");
@@ -41,7 +50,6 @@ var clickHandler = function (event) {
         }
 
         board[row][col] = player;
-        console.log("board:", board);
 
         draw();
 
@@ -52,6 +60,9 @@ var clickHandler = function (event) {
         } else {
             player = "X";
         }
+
+    } else {
+        start();
     }
 };
 
@@ -61,13 +72,12 @@ var getRelativeCoords = function (event) {
 
 var draw = function () {
 
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
     context.fillRect(99, 0, 2, 300);
     context.fillRect(199, 0, 2, 300);
     context.fillRect(0, 99, 300, 2);
     context.fillRect(0, 199, 300, 2);
-
-    context.font = "50px Arial";
-    context.textAlign = "center";
 
     board.forEach(function (row, row_index) {
         row.forEach(function (cell, col_index) {
@@ -93,10 +103,6 @@ var checkForWin = function () {
         (board[0][0] == player && board[1][1] == player && board[2][2] == player ) ||
         (board[2][0] == player && board[1][1] == player && board[0][2] == player )) {
 
-            console.log("Player " + player + " won!");
-
-            context.font = "48px Arial";
-            context.textAlign = "center";
             context.fillText("Player " + player + " won!", 150, 370);
             state = "over";
 
@@ -110,10 +116,6 @@ var checkForWin = function () {
                 });
             });
             if (tie) {
-                console.log("Board filled");
-
-                context.font = "48px Arial";
-                context.textAlign = "center";
                 context.fillText("It was a tie!", 150, 370);
                 state = "over";
             }
