@@ -8,6 +8,8 @@ var context;
 
 var player = "X";
 
+var state = "playing"
+
 var init = function () {
 
     var canvas = document.getElementById("myCanvas");
@@ -19,33 +21,37 @@ var init = function () {
 };
 
 var clickHandler = function (event) {
-    var position = getRelativeCoords(event);
 
-    var col = Math.floor(position.x / 100);
-    var row = Math.floor(position.y / 100);
-    console.log("cell:", col, row);
+    if (state == "playing") {
 
-    if (row < 0 || row > 2 || col < 0 || col > 2) {
-        console.log("Cell off board");
-        return;
-    }
+        var position = getRelativeCoords(event);
 
-    if (board[row][col]) {
-        console.log("Cell already taken");
-        return;
-    }
+        var col = Math.floor(position.x / 100);
+        var row = Math.floor(position.y / 100);
+        console.log("cell:", col, row);
 
-    board[row][col] = player;
-    console.log("board:", board);
+        if (row < 0 || row > 2 || col < 0 || col > 2) {
+            console.log("Cell off board");
+            return;
+        }
 
-    draw();
+        if (board[row][col]) {
+            console.log("Cell already taken");
+            return;
+        }
 
-    checkForWin();
+        board[row][col] = player;
+        console.log("board:", board);
 
-    if (player == "X") {
-        player = "O";
-    } else {
-        player = "X"
+        draw();
+
+        checkForWin();
+
+        if (player == "X") {
+            player = "O";
+        } else {
+            player = "X";
+        }
     }
 };
 
@@ -92,6 +98,7 @@ var checkForWin = function () {
             context.font = "48px Arial";
             context.textAlign = "center";
             context.fillText("Player " + player + " won!", 150, 370);
+            state = "over";
 
         } else {
             var tie = true;
@@ -108,6 +115,7 @@ var checkForWin = function () {
                 context.font = "48px Arial";
                 context.textAlign = "center";
                 context.fillText("It was a tie!", 150, 370);
+                state = "over";
             }
         }
 };
