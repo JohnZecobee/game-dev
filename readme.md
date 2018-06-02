@@ -16,3 +16,4 @@ Plan: (italic items are complete)
 13. *Stop cells from being clicked if already clicked*
 14. *Stop cells from being clicked if tied or won*
 15. *Offer reset*
+16. *Clean up and add comments*
