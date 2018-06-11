@@ -17,4 +17,9 @@ Hive plan
 16. Beetle movement (on top of peices, stacking)
 17. Disable movement of pieces that have a beetle on top
 18. Make it so moving pieces in hand doesn't count as a turn
-s
+
+To get set up:
+1. Make sure to install node 8
+2. Install: sudo npm install
+3. Run: npm run serve
+4. Tests: npm run test:unit
