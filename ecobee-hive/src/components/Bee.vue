@@ -1,6 +1,6 @@
 <template>
   <div class="bee">
-    <img src="./../assets/logo.png" class="hexagon"/>
+    <img src="./../assets/tile.svg" class="hexagon"/>
     Bee
   </div>
 </template>
