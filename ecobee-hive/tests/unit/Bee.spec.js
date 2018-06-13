@@ -7,4 +7,9 @@ describe("Bee.vue", () => {
     const wrapper = shallowMount(Bee);
     expect(wrapper.text()).to.include("Bee");
   });
+
+  it("renders a hexagon when passed", () => {
+    const wrapper = shallowMount(Bee);
+    expect(wrapper.find(".hexagon").isVisible());
+  });
 });
