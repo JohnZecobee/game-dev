@@ -1,5 +1,5 @@
 <template>
-  <div class="bee">
+  <div class="bee" @click="onclick">
     <svg class="hexagon" width="236" height="276" xmlns="http://www.w3.org/2000/svg">
       <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
 
@@ -22,7 +22,12 @@
 <script>
 export default {
   name: "Bee",
-  props: {}
+  props: {},
+  methods: {
+    onclick: function (e){
+      console.log("clicked")
+    }
+  }
 };
 </script>
 
