@@ -1,5 +1,5 @@
 <template>
-    <Tile species="spider" />
+    <Tile species="spider" color="purple" />
 </template>
 
 <script>

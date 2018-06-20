@@ -13,7 +13,7 @@
       <g>
         <title>Layer 1</title>
         <path fill="#000000" stroke-width="1.5" d="m-19.25,138.079975l58.71429,-117.428553l156.571428,0l58.714272,117.428553l-58.714272,117.428553l-156.571428,0l-58.71429,-117.428553z" id="svg_1" stroke="#000" transform="rotate(-90 117.75000000000004,138.07998657226565) " />
-        <text class="tileGraphic" transform="matrix(1,0,0,1,0,0) " xml:space="preserve" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_3" y="146.25" x="119" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ffffff">{{species}}</text>
+        <text class="tileGraphic" transform="matrix(1,0,0,1,0,0) " xml:space="preserve" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_3" y="146.25" x="119" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" :fill="color">{{species}}</text>
       </g>
     </svg>
   </div>
@@ -23,7 +23,8 @@
 export default {
   name: "Tile",
   props: {
-    species: String
+    species: String,
+    color: String
   },
   methods: {
     onclick: function(e) {
