@@ -1,5 +1,5 @@
 <template>
-    <Tile species="spider" color="purple" />
+    <Tile species="spider" color="purple" :player="player" />
 </template>
 
 <script>
@@ -8,6 +8,9 @@ export default {
     name: "Spider",
     components: {
         Tile
+    },
+    props: {
+        player: String
     }
 };
 </script>

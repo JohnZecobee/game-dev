@@ -1,10 +1,15 @@
 <template>
   <div id="app">
-    <Bee></Bee>
-    <Ant></Ant>
-    <Beetle></Beetle>
-    <Spider></Spider>
-    <Grasshopper></Grasshopper>
+    <Bee player="white"></Bee>
+    <Bee player="black"></Bee>
+    <Ant player="white"></Ant>
+    <Ant player="black"></Ant>
+    <Beetle player="white"></Beetle>
+    <Beetle player="black"></Beetle>
+    <Spider player="white"></Spider>
+    <Spider player="black"></Spider>
+    <Grasshopper player="white"></Grasshopper>
+    <Grasshopper player="black"></Grasshopper>
   </div>
 </template>
 
