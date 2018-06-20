@@ -1,15 +1,15 @@
 <template>
-  <Tile species="bee" />
+    <Tile species="beetle" />
 </template>
 
 <script>
 import Tile from "./Tile.vue";
 
 export default {
-  name: "Bee",
-  components: {
-    Tile
-  }
+    name: "Beetle",
+    components: {
+        Tile
+    }
 };
 </script>
 
