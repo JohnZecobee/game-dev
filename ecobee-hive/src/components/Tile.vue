@@ -1,5 +1,5 @@
 <template>
-  <div class="tile" @click="onclick">
+  <span class="tile" @click="onclick">
     <svg class="hexagon" width="236" height="276" xmlns="http://www.w3.org/2000/svg">
       <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
 
@@ -16,7 +16,7 @@
         <text class="tileGraphic" transform="matrix(1,0,0,1,0,0) " xml:space="preserve" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="32" id="svg_3" y="146.25" x="119" fill-opacity="null" stroke-opacity="null" stroke-width="0.5" stroke="#000" :fill="color">{{species}}</text>
       </g>
     </svg>
-  </div>
+  </span>
 </template>
 
 <script>
