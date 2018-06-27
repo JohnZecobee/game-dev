@@ -15,10 +15,10 @@ export default {
   },
   data: () => ({
     tiles: [
-      { type: "Ant", player: "white", neighbours: [] },
-      { type: "Bee", player: "black", neighbours: [] },
-      { type: "Ant", player: "white", neighbours: [] }
-    ]
+      { id: 1, type: "Ant", player: "white", neighbours: [null,    2, null, null, null, null] },
+      { id: 2, type: "Bee", player: "black", neighbours: [null,    3, null, null,    1, null] },
+      { id: 3, type: "Ant", player: "white", neighbours: [null, null, null, null,    2, null] }
+    ],
   })
 };
 </script>
