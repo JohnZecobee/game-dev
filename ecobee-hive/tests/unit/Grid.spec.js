@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { shallowMount } from "@vue/test-utils";
 import Grid from "@/components/Grid.vue";
-import Tile from "@/components/Tile.vue";
+import Tylist from "@/components/Tylist.vue";
 
 describe("Grid.vue", () => {
   it("renders an empty grid", () => {
@@ -24,6 +24,6 @@ describe("Grid.vue", () => {
       }
     });
 
-    expect(wrapper.find(Tile).props().player).to.equal("black");
+    expect(wrapper.find(Tylist).props().player).to.equal("black");
   });
 });

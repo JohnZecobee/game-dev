@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <Tile
+    <Tylist
       v-for="tile in tiles"
       :key="tile.type"
       :species="tile.type"
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Tile from "@/components/Tile.vue";
+import Tylist from "@/components/Tylist.vue";
 
 export default {
   name: "Grid",
@@ -18,7 +18,7 @@ export default {
     tiles: Array
   },
   components: {
-    Tile
+    Tylist
   }
 };
 </script>
