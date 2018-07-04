@@ -1,5 +1,5 @@
 <template>
-  <div class="grid">
+  <div class="grid" v-if="allTilesHaveSixNeighbours()">
     <Tylist
       v-for="tile in tiles"
       :key="tile.type"
@@ -19,6 +19,16 @@ export default {
   },
   components: {
     Tylist
+  },
+  methods: {
+    allTilesHaveSixNeighbours: function () {
+      for (const tile of this.tiles) {
+        if (tile.neighbours.length!==6) {
+          return false
+        }
+      }
+      return true
+    }
   }
 };
 </script>

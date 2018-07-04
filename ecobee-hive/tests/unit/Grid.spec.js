@@ -18,12 +18,27 @@ describe("Grid.vue", () => {
           {
             type: "Bee",
             player: "black",
-            neighbours: []
+            neighbours: [null, null, null, null, null, null]
           }
         ]
       }
     });
 
     expect(wrapper.find(Tylist).props().player).to.equal("black");
+  });
+
+  it("should throw and error if neighbours is not 6", () => {
+    const wrapper = shallowMount(Grid, {
+      propsData: {
+        tiles: [
+          {
+            type: "Bee",
+            player: "black",
+            neighbours: [null, null, null, null, null]
+          }
+        ]
+      }
+    });
+    expect(wrapper.isEmpty()).to.be.true;
   });
 });
