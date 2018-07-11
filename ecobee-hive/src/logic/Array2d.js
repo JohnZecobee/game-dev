@@ -1,4 +1,9 @@
 export const Array2d = function(tiles) {
-    var output = [[{id:1}, {id:2}, {id:3}]];
+    let output = [];
+    let row = [];
+    tiles.map(function(tile) {
+        row.push({id:tile.id})
+    }) 
+    output.push(row);
     return output;
 };
