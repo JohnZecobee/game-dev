@@ -15,9 +15,9 @@ export default {
   },
   data: () => ({
     tiles: [
-      { id: 1, type: "Ant", player: "white", neighbours: [null,    2, null, null, null, null] },
-      { id: 2, type: "Bee", player: "black", neighbours: [null,    3, null, null,    1, null] },
-      { id: 3, type: "Ant", player: "white", neighbours: [null, null, null, null,    2, null] }
+      { id: 0, type: "Ant", player: "white", neighbours: [null,    1, null, null, null, null] },
+      { id: 1, type: "Bee", player: "black", neighbours: [null,    2, null, null,    0, null] },
+      { id: 2, type: "Ant", player: "white", neighbours: [null, null, null, null,    1, null] }
     ],
   })
 };
