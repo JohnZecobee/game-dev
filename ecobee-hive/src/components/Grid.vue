@@ -1,7 +1,7 @@
 <template>
   <div class="grid" v-if="allTilesHaveSixNeighbours()">
     <Tylist
-      v-for="tile in tiles"
+      v-for="tile in positionifiedTiles"
       :key="tile.type"
       :species="tile.type"
       :player="tile.player"
@@ -11,6 +11,7 @@
 
 <script>
 import Tylist from "@/components/Tylist.vue";
+import { positionify } from "@/logic/positionify";
 
 export default {
   name: "Grid",
@@ -19,6 +20,11 @@ export default {
   },
   components: {
     Tylist
+  },
+  computed: {
+    positionifiedTiles: function() {
+      return positionify(this.tiles);
+    }
   },
   methods: {
     allTilesHaveSixNeighbours: function () {
