@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { positionify } from "../../src/logic/positionify";
+import { positionify } from "@/logic/positionify";
 
 describe("positionify", () => {
   it("returns a single tile", () => {
