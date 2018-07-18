@@ -1,3 +1,5 @@
+import { clone } from "lodash";
+
 /*
 { id: 0, type: "Ant", player: "white", neighbours: [null,    1, null, null, null, null] },
 { id: 1, type: "Bee", player: "black", neighbours: [null,    2, null, null,    0, null] },
@@ -15,7 +17,7 @@ const directions = [
 
 
 
-export const positionify = function(tiles, id, x, y) {
+const _positionify = function(tiles, id, x, y) {
     if (id === undefined) {id = 0;}
     if (x === undefined) {x = 0;}
     if (y === undefined) {y = 0;}
@@ -25,8 +27,14 @@ export const positionify = function(tiles, id, x, y) {
         if (neighbour_id) {
             let neighbourTile = tiles[neighbour_id]
             if (neighbourTile.x === undefined) {
-                positionify(tiles, neighbourTile.id, x+directions[d].dx, y+directions[d].dy)
+                _positionify(tiles, neighbourTile.id, x+directions[d].dx, y+directions[d].dy)
             }
         }
     });
 };
+
+export const positionify = function(tiles) {
+    const cloneTiles = tiles.map(clone);
+    _positionify(cloneTiles);
+    return cloneTiles;
+}
