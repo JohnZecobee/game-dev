@@ -35,6 +35,7 @@ const _positionify = function(tiles, id, x, y) {
 
 export const positionify = function(tiles) {
     const cloneTiles = tiles.map(clone);
+    if (tiles.length === 0) return cloneTiles;
     _positionify(cloneTiles);
     return cloneTiles;
 }
