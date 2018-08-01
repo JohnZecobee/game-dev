@@ -5,12 +5,15 @@
       :key="tile.type"
       :species="tile.type"
       :player="tile.player"
+      :x="tile.x"
+      :y="tile.y"
     />
   </div>
 </template>
 
 <script>
 import Tylist from "@/components/Tylist.vue";
+import { normalize } from "@/logic/normalize";
 import { positionify } from "@/logic/positionify";
 
 export default {
@@ -23,17 +26,17 @@ export default {
   },
   computed: {
     positionifiedTiles: function() {
-      return positionify(this.tiles);
+      return normalize(positionify(this.tiles));
     }
   },
   methods: {
-    allTilesHaveSixNeighbours: function () {
+    allTilesHaveSixNeighbours: function() {
       for (const tile of this.tiles) {
-        if (tile.neighbours.length!==6) {
-          return false
+        if (tile.neighbours.length !== 6) {
+          return false;
         }
       }
-      return true
+      return true;
     }
   }
 };

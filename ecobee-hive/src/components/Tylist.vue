@@ -1,18 +1,23 @@
 <template>
     <Bee
-     v-if="species==='Bee'" :player="player"
+      :style="style"
+      v-if="species==='Bee'" :player="player"
     />
     <Ant
-     v-else-if="species==='Ant'" :player="player"
+      :style="style"
+      v-else-if="species==='Ant'" :player="player"
     />
     <Spider
-     v-else-if="species==='Spider'" :player="player"
+      :style="style"
+      v-else-if="species==='Spider'" :player="player"
     />
     <Grasshopper
-     v-else-if="species==='Grasshopper'" :player="player"
+      :style="style"
+      v-else-if="species==='Grasshopper'" :player="player"
     />
     <Beetle
-     v-else-if="species==='Beetle'" :player="player"
+      :style="style"
+      v-else-if="species==='Beetle'" :player="player"
     />
 </template>
 
@@ -28,17 +33,41 @@ export default {
   name: "Tylist",
   props: {
     species: String,
-    player: String
+    player: String,
+    x: Number,
+    y: Number
   },
-  methods: {
-
-  },
+  methods: {},
   components: {
-      Bee,
-      Ant,
-      Spider,
-      Grasshopper,
-      Beetle
+    Bee,
+    Ant,
+    Spider,
+    Grasshopper,
+    Beetle
+  },
+  computed: {
+    style() {
+      console.log(this.x * this.width);
+      return {
+        position: "absolute",
+        left: `${this.x * this.width}px`,
+        top: `${this.y * this.height}px`,
+      };
+    },
+    width() {
+      return 238;
+    },
+    height() {
+      return 238;
+    },
   }
 };
 </script>
+
+<style scoped>
+.tileF {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+</style>
