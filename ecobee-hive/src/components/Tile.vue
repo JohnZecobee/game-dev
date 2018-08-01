@@ -5,7 +5,6 @@
 
       <g>
         <title>background</title>
-        <rect x="-1" y="-1" width="238" height="278" id="canvas_background" fill="#ffffff" />
         <g id="canvasGrid" display="none">
           <rect id="svg_2" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)" />
         </g>
