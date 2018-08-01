@@ -51,14 +51,14 @@ export default {
       return {
         position: "absolute",
         left: `${this.x * this.width}px`,
-        top: `${this.y * this.height}px`,
+        top: `${this.y * this.height * 1.6}px`,
       };
     },
     width() {
-      return 238;
+      return 236;
     },
     height() {
-      return 238;
+      return 272;
     },
   }
 };
