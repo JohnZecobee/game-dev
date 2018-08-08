@@ -1,10 +1,10 @@
 <template>
-<div clsass="playerHand"></div>
+<div clsass="PlayerHand"></div>
 </template>
 
 <script>
 export default {
-  name: "playerHand",
+  name: "PlayerHand",
   props: {
     tiles: Array
   },

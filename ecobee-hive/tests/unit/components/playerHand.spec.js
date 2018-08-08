@@ -1,10 +1,12 @@
 import { expect } from "chai";
 import { shallowMount } from "@vue/test-utils";
-import playerHand from "@/components/playerHand.vue";
+import PlayerHand from "@/components/PlayerHand.vue";
 
-it("renders an empty playerHand", () => {
-  const wrapper = shallowMount(playerHand, {
-    propsData: { tiles: [] }
+describe("PlayerHand.Vue", () => {
+  it("renders an empty PlayerHand", () => {
+    const wrapper = shallowMount(PlayerHand, {
+      propsData: { tiles: [] }
+    });
+    expect(wrapper.props().tiles).to.be.empty;
   });
-  expect(wrapper.props().tiles).to.be.empty;
 });
