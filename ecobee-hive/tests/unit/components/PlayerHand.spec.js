@@ -27,4 +27,59 @@ describe("PlayerHand.Vue", () => {
     });
     expect(wrapper.props().tiles.length).to.equal(1);
   });
+
+  it("a player hand with starting single set", () => {
+    const wrapper = shallowMount(PlayerHand, {
+      propsData: {
+        player: "black",
+        tiles: [
+          {
+            type: "Bee",
+            id: 1
+          },
+          {
+            type: "Ant",
+            id: 2
+          },
+          {
+            type: "Ant",
+            id: 3
+          },
+          {
+            type: "Ant",
+            id: 4
+          },
+          {
+            type: "Spider",
+            id: 5
+          },
+          {
+            type: "Spider",
+            id: 6
+          },
+          {
+            type: "Grasshopper",
+            id: 7
+          },
+          {
+            type: "Grasshopper",
+            id: 8
+          },
+          {
+            type: "Grasshopper",
+            id: 9
+          },
+          {
+            type: "Beetle",
+            id: 10
+          },
+          {
+            type: "Beetle",
+            id: 11
+          }
+        ]
+      }
+    });
+    expect(wrapper.props().tiles.length).to.equal(11);
+  });
 });

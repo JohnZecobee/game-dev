@@ -1,5 +1,5 @@
 <template>
-<div clsass="PlayerHand"></div>
+<div class="PlayerHand"></div>
 </template>
 
 <script>
