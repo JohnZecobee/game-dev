@@ -1,13 +1,26 @@
 <template>
-<div class="PlayerHand"></div>
+  <div class="PlayerHand" :style="style">
+    <Tylist
+      v-for="(tile, index) in tiles"
+      :key="tile.id"
+      :species="tile.type"
+      :player="tile.player"
+      :x="index * 1.1"
+      :y="0"
+    />
+  </div>
 </template>
 
 <script>
+import Tylist from "@/components/Tylist.vue";
+
 export default {
   name: "PlayerHand",
   props: {
     tiles: Array,
-    
+  },
+  components: {
+    Tylist
   },
   data: function() {
     return {
@@ -22,6 +35,17 @@ export default {
           this.error = "Duplicate tile ids";
         }
       }
+    }
+  },
+  computed: {
+    style() {
+      return {
+        position: "absolute",
+        bottom: `${this.tileHeight * 0.6}px`
+      };
+    },
+    tileHeight() {
+      return 272
     }
   }
 };
