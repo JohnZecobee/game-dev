@@ -1,18 +1,16 @@
 <template>
-  <div class="PlayerHand" :style="style">
-    <Tylist
-      v-for="(tile, index) in tiles"
-      :key="tile.id"
-      :species="tile.type"
-      :player="tile.player"
+  <div>
+  <div v-for="(tile, index) in tiles" :key="tile.id" class="PlayerHand" :style="style">
+    <PlayerHandTile
+      :tile="tile"
       :x="index * 1.1"
-      :y="0"
     />
+  </div>
   </div>
 </template>
 
 <script>
-import Tylist from "@/components/Tylist.vue";
+import PlayerHandTile from "@/components/PlayerHandTile.vue";
 
 export default {
   name: "PlayerHand",
@@ -20,11 +18,12 @@ export default {
     tiles: Array,
   },
   components: {
-    Tylist
+    PlayerHandTile
   },
   data: function() {
     return {
-      error:false
+      error: false,
+      offset: 0,
     };
   },
   created: function() {
@@ -41,7 +40,7 @@ export default {
     style() {
       return {
         position: "absolute",
-        bottom: `${this.tileHeight * 0.6}px`
+        bottom: `${this.tileHeight * 0.6 - this.offset}px`
       };
     },
     tileHeight() {
